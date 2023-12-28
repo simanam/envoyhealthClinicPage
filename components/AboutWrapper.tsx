@@ -4,6 +4,7 @@ import About from "./About";
 import Procedure from "./Procedure";
 import Highlight from "./Highlight";
 import { ProcedureType } from "../types/ProcedureType";
+import LeadGenerationForm from "./LeadGenerationForm";
 
 const desc = `Providing a comprehensive range of general and specialist dental care to local and international patients, the Sani Dental Group is one of Mexico’s leading dental providers with three clinics in two locations.
 Established in 1985 by Dr Enrique Jimenez Alvarez, a specialist in Implantology and Laser Dentistry, there are now 30 specialists across the group who have had international training at prestigious medical institutions across the world, including Harvard School of Dental Medicine, in the USA and MegaGen Implants in South Korea.
@@ -106,7 +107,13 @@ const AboutWrapper = () => {
         </div>
       </div>
       <div className="w-full md:w-1/2 lg:w-1/3">
-        <Highlight />
+        {/* <Highlight /> */}
+        <div className="bg-off-blue w-[100%] h-auto p-6  rounded-lg ">
+          <h4 className="text-3xl font-bold text-start  my-6">
+            Get a Quote Now
+          </h4>
+          <LeadGenerationForm />
+        </div>
       </div>
     </div>
   );

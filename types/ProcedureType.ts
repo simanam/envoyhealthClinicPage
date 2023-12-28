@@ -38,3 +38,8 @@ export type ReviewType = {
   dateOfAppointment: string; // ISO date string format
   treatmentPerformed: string;
 };
+
+export type TreatmentOption = {
+  value: string;
+  label: string;
+};
