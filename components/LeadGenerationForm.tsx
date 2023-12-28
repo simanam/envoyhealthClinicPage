@@ -33,6 +33,29 @@ const LeadGenerationForm: React.FC = () => {
     <form onSubmit={handleSubmit(onSubmit)} className="max-w-lg mx-auto ">
       <div className="mb-4">
         <label
+          htmlFor="treatment"
+          className="block text-sm font-medium text-gray-700"
+        >
+          Treatment
+        </label>
+        <select
+          id="treatment"
+          className="mt-1 block w-full h-10 border border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          {...register("treatment", { required: true })}
+        >
+          <option value="">Select a treatment</option>
+          {treatmentOptions.map((option, index) => (
+            <option key={index} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+        {errors.treatment && (
+          <span className="text-xs text-red-600">This field is required</span>
+        )}
+      </div>
+      <div className="mb-4">
+        <label
           htmlFor="name"
           className="block text-sm font-medium text-gray-700"
         >
@@ -62,30 +85,6 @@ const LeadGenerationForm: React.FC = () => {
           {...register("email", { required: true })}
         />
         {errors.email && (
-          <span className="text-xs text-red-600">This field is required</span>
-        )}
-      </div>
-
-      <div className="mb-4">
-        <label
-          htmlFor="treatment"
-          className="block text-sm font-medium text-gray-700"
-        >
-          Treatment
-        </label>
-        <select
-          id="treatment"
-          className="mt-1 block w-full h-10 border border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-          {...register("treatment", { required: true })}
-        >
-          <option value="">Select a treatment</option>
-          {treatmentOptions.map((option, index) => (
-            <option key={index} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-        {errors.treatment && (
           <span className="text-xs text-red-600">This field is required</span>
         )}
       </div>
